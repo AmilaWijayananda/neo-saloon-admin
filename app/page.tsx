@@ -35,12 +35,15 @@ export default function Home() {
       
   )
 
-  window.location.href = "/dashboard"
+  if(response.data.role === "ADMIN"){
 
-    
+      window.location.href = "/dashboard"
 
-    
-  
+    }else{
+
+      toast.error("You are not authorized to access this page")
+
+    }
 
   }
 
